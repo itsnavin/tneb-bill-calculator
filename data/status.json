@@ -1,36 +1,19 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-19T20:52:06.191Z",
+  "checkedAt": "2026-10-19T20:57:16.366Z",
   "result": "error",
-  "runUrl": "https://github.com/itsnavin/tneb-bill-calculator/actions/runs/39322479724",
+  "runUrl": "https://github.com/itsnavin/tneb-bill-calculator/actions/runs/39323157923",
   "lastSuccessfulFetchAt": "2026-10-19T20:47:49.082Z",
   "lastUnchangedAt": "2026-10-19T20:47:49.082Z",
   "currentRatesVerified": false,
   "errors": [
-    "tnpdcl-tariff: fetch failed",
-    "tnerc-tariff: fetch failed",
-    "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf: fetch failed",
-    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf: fetch failed",
-    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf: fetch failed"
+    "tnpdcl-tariff: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnpdcl.org:443, timeout: 10000ms))",
+    "tnerc-tariff: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))",
+    "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnpdcl.org:443, timeout: 10000ms))",
+    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))",
+    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))"
   ],
-  "changes": [
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo4%20o020620262025.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo49%20020620261947.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo5%20o020620262046.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo6%20o020620262056.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo65%20020620261934.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20071020261124.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20160220261703.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20170320261800.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%203070420261536.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-20250920261549.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-II070120261114.pdf",
-    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy%2020100420261333.pdf",
-    "Document no longer observed: https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
-    "Document no longer observed: https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf"
-  ],
+  "changes": [],
   "observations": {
     "indexes": [],
     "documents": []
