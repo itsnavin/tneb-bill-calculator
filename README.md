@@ -83,6 +83,14 @@ GitHub schedules can be delayed, skipped under platform conditions, or disabled
 after repository inactivity; the app marks checks older than **48 hours** stale.
 A missing, future, failed, or unknown status never appears fresh.
 
+**Initial deployment observation:** local requests fetched both indexes and all
+16 PDFs successfully. The first GitHub-hosted manual run could not fetch either
+official host. It committed and deployed `result: error`, retained the previous
+successful local-fetch timestamp, and failed visibly after publishing. A live
+deployment is not evidence that hosted official-source access succeeded. Network
+errors (including their underlying connection/TLS cause when available) are
+published without disabling TLS or bypassing access controls.
+
 Each scheduled/manual run:
 
 1. Fetches the [TNPDCL tariff index](https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/)
@@ -98,7 +106,8 @@ Each scheduled/manual run:
    every redirect before following it (maximum three); three attempts, 20-second
    request/body timeout, 32 MiB document limit, 40 links per index / 60 documents
    total. Rejects non-PDF payloads, HTML errors with HTTP 200, unsupported links,
-   unexpected pagination, empty indexes, and missing year metadata.
+   unexpected pagination, empty indexes, and missing year metadata. Incomplete
+   fetches are reported as failures, not misclassified as removed source documents.
 4. Atomically writes `data/status.json`, preserving the prior last-success time
    on failure. A complete unchanged fetch updates **source health only**, never
    reviewed rates, human verification, or current approval.

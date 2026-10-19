@@ -6,6 +6,11 @@ export const hash = body => createHash('sha256').update(body).digest('hex');
 const normalize = text => text.replace(/\s+/g, ' ').trim();
 const MAX_BYTES = 32 * 1024 * 1024;
 
+export function describeError(error) {
+  const cause = error.cause;
+  return cause ? `${error.message} (${cause.code || cause.name}: ${cause.message})` : error.message;
+}
+
 export function allowUrl(value) {
   const url = new URL(value);
   const allowed = url.protocol === 'https:' && !url.username && !url.password && !url.port &&
@@ -96,7 +101,7 @@ export async function observe({ fetchSource = fetchOfficial } = {}) {
       observations.indexes.push({ id: source.id, url: source.url, resolvedUrl: response.url, sha256: hash(response.bytes), ...index });
       for (const entry of index.entries) urls.add(entry.url);
     } catch (error) {
-      errors.push(`${source.id}: ${error.message}`);
+      errors.push(`${source.id}: ${describeError(error)}`);
     }
   }
   if (urls.size > 60) errors.push('Too many linked documents; manual coverage review required');
@@ -108,7 +113,7 @@ export async function observe({ fetchSource = fetchOfficial } = {}) {
       }
       observations.documents.push({ url, resolvedUrl: response.url, sha256: hash(response.bytes), bytes: response.bytes.length });
     } catch (error) {
-      errors.push(`${url}: ${error.message}`);
+      errors.push(`${url}: ${describeError(error)}`);
     }
   }
   observations.documents.sort((a, b) => a.url.localeCompare(b.url));
@@ -136,7 +141,7 @@ export function compareObservation(baseline, observations) {
 }
 
 export function makeStatus({ baseline, observations, errors, previous, now = new Date().toISOString(), runUrl = null }) {
-  const changes = compareObservation(baseline, observations);
+  const changes = errors.length ? [] : compareObservation(baseline, observations);
   const result = errors.length ? 'error' : changes.length ? 'needs-review' : 'unchanged';
   return {
     schemaVersion: 1, checkedAt: now, result, runUrl,

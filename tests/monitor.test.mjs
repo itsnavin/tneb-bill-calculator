@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { allowUrl, fetchOfficial, extractIndex, observe, compareObservation, makeStatus } from '../scripts/monitor-lib.mjs';
+import { allowUrl, fetchOfficial, extractIndex, observe, compareObservation, makeStatus, describeError } from '../scripts/monitor-lib.mjs';
 import { indexes, reviewedDocuments } from '../scripts/sources.mjs';
 
 const tnercHtml = `<select id="ddYear"><option selected value="2026">2026</option></select><table id="thetable"><tr><th>Tariff orders</th></tr><tr><td>Order 5 domestic subsidy</td><td><a href="../Orders/files/test.pdf">Domestic subsidy</a></td><td>26/05/2026</td></tr></table>`;
@@ -86,6 +86,12 @@ test('monitor fetches every linked PDF and pinned tariff/subsidy, not just HTTP 
   assert.ok(compareObservation(observations, changed).some(s => /changed official document/.test(s)));
   changed.indexes[0].entries.push({ url: 'new.pdf', title: 'New tariff' });
   assert.ok(compareObservation(observations, changed).some(s => /index links/.test(s)));
+  const redirected = structuredClone(observations);
+  redirected.documents[0].resolvedUrl = 'https://www.tnerc.tn.gov.in/Orders/files/redirected.pdf';
+  assert.ok(compareObservation(observations, redirected).some(s => /changed official document/.test(s)));
+  const removed = structuredClone(observations);
+  removed.documents.pop();
+  assert.ok(compareObservation(observations, removed).some(s => /no longer observed/.test(s)));
 });
 test('PDF login/error HTML and source failures are visible even with HTTP 200', async () => {
   const result = await observe({ fetchSource: async url => {
@@ -110,7 +116,14 @@ test('successful fetches do not erase review changes or reset human tariff revie
   assert.equal(failed.result, 'error');
   assert.equal(failed.lastSuccessfulFetchAt, previous.lastSuccessfulFetchAt);
   assert.equal(failed.lastUnchangedAt, previous.lastUnchangedAt);
+  assert.deepEqual(makeStatus({ baseline: observations, observations: { indexes: [], documents: [] }, errors: ['down'], now }).changes, []);
   assert.equal(makeStatus({ baseline: null, observations, errors: ['down'], now }).lastSuccessfulFetchAt, null);
+});
+test('source failure diagnostics preserve the underlying network or TLS cause', async () => {
+  const error = new TypeError('fetch failed', { cause: Object.assign(new Error('Connection timed out'), { code: 'UND_ERR_CONNECT_TIMEOUT' }) });
+  assert.match(describeError(error), /fetch failed.*UND_ERR_CONNECT_TIMEOUT.*Connection timed out/);
+  const result = await observe({ fetchSource: async () => { throw error; } });
+  assert.ok(result.errors.every(message => message.includes('UND_ERR_CONNECT_TIMEOUT')));
 });
 test('recorded provenance is pinned to observed official documents', async () => {
   const evidence = JSON.parse(await readFile('data/evidence.json', 'utf8'));
