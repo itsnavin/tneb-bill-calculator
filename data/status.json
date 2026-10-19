@@ -1,212 +1,39 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-19T20:47:49.082Z",
-  "result": "unchanged",
-  "runUrl": null,
+  "checkedAt": "2026-10-19T20:52:06.191Z",
+  "result": "error",
+  "runUrl": "https://github.com/itsnavin/tneb-bill-calculator/actions/runs/39322479724",
   "lastSuccessfulFetchAt": "2026-10-19T20:47:49.082Z",
   "lastUnchangedAt": "2026-10-19T20:47:49.082Z",
   "currentRatesVerified": false,
-  "errors": [],
-  "changes": [],
+  "errors": [
+    "tnpdcl-tariff: fetch failed",
+    "tnerc-tariff: fetch failed",
+    "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf: fetch failed",
+    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf: fetch failed",
+    "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf: fetch failed"
+  ],
+  "changes": [
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo4%20o020620262025.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo49%20020620261947.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo5%20o020620262046.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo6%20o020620262056.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo65%20020620261934.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20071020261124.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20160220261703.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20170320261800.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%203070420261536.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-20250920261549.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-II070120261114.pdf",
+    "Document no longer observed: https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy%2020100420261333.pdf",
+    "Document no longer observed: https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
+    "Document no longer observed: https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf"
+  ],
   "observations": {
-    "indexes": [
-      {
-        "id": "tnpdcl-tariff",
-        "url": "https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/",
-        "resolvedUrl": "https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/",
-        "sha256": "578063f9ebb9a380b3a6e2f3c25ea1ba5001faa40710103dd8e6ec2ae72eea73",
-        "selectedYear": null,
-        "entries": [
-          {
-            "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
-            "title": "Tariff order",
-            "context": "Tariff order"
-          },
-          {
-            "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
-            "title": "Non Tariff related Miscellaneous Charges(LT&HT)",
-            "context": "Non Tariff related Miscellaneous Charges(LT&HT)"
-          }
-        ]
-      },
-      {
-        "id": "tnerc-tariff",
-        "url": "https://www.tnerc.tn.gov.in/TariffOrders.aspx",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/TariffOrders.aspx",
-        "sha256": "9273139ebec1fa1397f62ef270fb3b4909db60ff518f57da322bea61a6b67298",
-        "selectedYear": "2026",
-        "entries": [
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo4%20o020620262025.pdf",
-            "title": "Approval of True Up of TNPDCL for FY 2024-25",
-            "context": "6M.P.No.4 of 2026 Approval of True Up of TNPDCL for FY 2024-2501/06/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo49%20020620261947.pdf",
-            "title": "Approval for True Up of SLDC for FY 2022-23",
-            "context": "5M.P.No.49 of 2025 Approval for True Up of SLDC for FY 2022-2301/06/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo5%20o020620262046.pdf",
-            "title": "Approval of True Up of TNGECL for FY 2024-25",
-            "context": "3M.P.No.5 of 2026 Approval of True Up of TNGECL for FY 2024-2501/06/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo6%20o020620262056.pdf",
-            "title": "Approval for True Up of TNPGCL for FY 2024-25",
-            "context": "4M.P.No.6 of 2026 Approval for True Up of TNPGCL for FY 2024-2501/06/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo65%20020620261934.pdf",
-            "title": "Approval of True Up of TANTRANSCO for FY 2022-23",
-            "context": "7M.P.No.65 of 2025 Approval of True Up of TANTRANSCO for FY 2022-2301/06/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20071020261124.pdf",
-            "title": "Final Tariff Subsidy Order for FY 2025-26 by the Government of Tamil Nadu.",
-            "context": "2Order No. 6 of 2026 Final Tariff Subsidy Order for FY 2025-26 by the Government of Tamil Nadu.24/09/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20160220261703.pdf",
-            "title": "Interest on Advance Current Consumption Charges kept by the consumers for the Year 2026-27",
-            "context": "13Order No. 1 of 2026 Interest on Advance Current Consumption Charges kept by the consumers for the Year 2026-2711/02/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20170320261800.pdf",
-            "title": ": Interest on Security Deposit for the Financial year 2025-26 in respect of HT and LT consumers",
-            "context": "12Order No. 2 of 2026 : Interest on Security Deposit for the Financial year 2025-26 in respect of HT and LT consumers 16/03/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
-            "title": "Additional Tariff Subsidy Order for FY 2026-27 due to increase of free electricity of total 200 units bimonthly to domestic consumers who consumes electricity upto 500 units bimonthly by the Government of Tamil Nadu.",
-            "context": "8Order No. 5 of 2026 Additional Tariff Subsidy Order for FY 2026-27 due to increase of free electricity of total 200 units bimonthly to domestic consumers who consumes electricity upto 500 units bimonthly by the Government of Tamil Nadu.26/05/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
-            "title": "Provisional Tariff Subsidy Order for FY 2026-27 by the Government of Tamil Nadu.",
-            "context": "9Order No. 4 of 2026 Provisional Tariff Subsidy Order for FY 2026-27 by the Government of Tamil Nadu. 27/04/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%203070420261536.pdf",
-            "title": "Interest on Security Deposit for the Financial year 2026-27 in respect of HT and LT consumers",
-            "context": "11Order No 3 of 2026 Interest on Security Deposit for the Financial year 2026-27 in respect of HT and LT consumers 06/04/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-20250920261549.pdf",
-            "title": "Subsidy Reconciliation for FY 2025-26 4th Quarter",
-            "context": "1Subsidy-2026 Subsidy Reconciliation for FY 2025-26 4th Quarter 25/09/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-II070120261114.pdf",
-            "title": "Subsidy Reconciliation for FY 2025-26 2nd Quarter",
-            "context": "14Subsidy-II Subsidy Reconciliation for FY 2025-26 2nd Quarter 07/01/2026"
-          },
-          {
-            "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy%2020100420261333.pdf",
-            "title": "Subsidy Reconciliation for FY 2025-26 3rd Quarter – Actual Consumption details - Domestic Consumers, Agriculture Consumers under Normal & SFS category, Hut Consumers, etc., Places of Public Worship",
-            "context": "10Subsidy 2025-26 Subsidy Reconciliation for FY 2025-26 3rd Quarter – Actual Consumption details - Domestic Consumers, Agriculture Consumers under Normal & SFS category, Hut Consumers, etc., Places of Public Worship09/04/2026"
-          }
-        ]
-      }
-    ],
-    "documents": [
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo4%20o020620262025.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo4%20o020620262025.pdf",
-        "sha256": "ea3679067b6aa839e0ef831576e6386022af4f270805cae1232ebd026c30acac",
-        "bytes": 17856586
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo49%20020620261947.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo49%20020620261947.pdf",
-        "sha256": "5517c329ed11d341715753f79d5f313e15289d6824c8a8690519fbdc4b5617e3",
-        "bytes": 6874276
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo5%20o020620262046.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo5%20o020620262046.pdf",
-        "sha256": "afc79c870008da926a90cf0547debe5712fe11097f6b564494791e1fcc065b00",
-        "bytes": 8048116
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo6%20o020620262056.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo6%20o020620262056.pdf",
-        "sha256": "091830ba6378f94e26e19800ab837d9cd88d17f7ab53d488b5d02ae203e2db5a",
-        "bytes": 10423824
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo65%20020620261934.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-MPNo65%20020620261934.pdf",
-        "sha256": "d3157409cfeb2c682ea435698e87ef865c6868bc8f69b7fb76d1599e0b334d9b",
-        "bytes": 5998736
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20071020261124.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20071020261124.pdf",
-        "sha256": "9253df7d370297f247887f9f22d569535fb85f2573efabd99e82cd5b2009c0e4",
-        "bytes": 479186
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20160220261703.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20160220261703.pdf",
-        "sha256": "ab0d06da25cc05dd9e45021e70db450da7f09924c1299ee7145b245380e1c743",
-        "bytes": 140591
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20170320261800.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20170320261800.pdf",
-        "sha256": "63852e0df42d4583fdd033998550883da8ca7ffcc6dd0d611020f3acf829b6f1",
-        "bytes": 343849
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
-        "sha256": "a75c54c0ce775c9c2bbd49e1f55092f342b3bdd15c79217f80c91856b75160e4",
-        "bytes": 297675
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
-        "sha256": "1eb20727bfa8bba5133c5d1a7579af80e42eac92c7400be52810f952f44fae00",
-        "bytes": 589507
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%203070420261536.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%203070420261536.pdf",
-        "sha256": "d9b944c4def1a4ea1e1c60d1fd85c9d8169e1d2e38cf6579c88b033678a22eed",
-        "bytes": 179970
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-20250920261549.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-20250920261549.pdf",
-        "sha256": "0469a49cb1ef024cc8e115dcfdc42d1f11397e59140a0323c1844593a87b642b",
-        "bytes": 394284
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-II070120261114.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy-II070120261114.pdf",
-        "sha256": "29e4356885dd017fc7ccddf359ae832cd6b90c1e50631ecee4b187f324c7bbd1",
-        "bytes": 368881
-      },
-      {
-        "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy%2020100420261333.pdf",
-        "resolvedUrl": "https://www.tnerc.tn.gov.in/Orders/files/TO-Subsidy%2020100420261333.pdf",
-        "sha256": "3d8517c5eb591c2276a0681cbbc40f2724cea57138d89271d0e2dc01c33a834c",
-        "bytes": 361474
-      },
-      {
-        "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
-        "resolvedUrl": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
-        "sha256": "efc5a4600d4319bc81565a0001540fd2f5f5301461f9e61d5ec0f345acdf31c4",
-        "bytes": 1082004
-      },
-      {
-        "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
-        "resolvedUrl": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
-        "sha256": "e4ec2d45f824e1412bf353e943997bc5193a337ccc815af4778880ebaf73c13d",
-        "bytes": 813173
-      }
-    ]
+    "indexes": [],
+    "documents": []
   },
   "coverage": "TNPDCL tariff index; TNERC default-year tariff index; all PDFs linked in those sections; three pinned tariff/subsidy PDFs. Not every government order, archive, court ruling, or account-specific rule.",
   "note": "Source availability and unchanged hashes are not proof that no newer order exists. No rates or review timestamps are auto-approved."
