@@ -1,0 +1,15 @@
+{
+  "provenance": "Independent hand-worked reference amounts from TNERC Order 6/2025 p34 less Order 4/2026 pp5-6, amended by Order 5/2026 pp2-3. These are not falsely described as official worked bill examples: the orders supply tables, not final bill examples.",
+  "scope": "Historical schedule 10 May-30 June 2026 only; integer paise; final half-up rounding. Above 500 the 101-200 benefit is removed.",
+  "cases": [
+    ["0", 0],
+    ["99.99", 0], ["100", 0], ["100.01", 0],
+    ["199.99", 0], ["200", 0], ["200.01", 5],
+    ["399.99", 93995], ["400", 94000], ["400.01", 94006],
+    ["499.99", 156994], ["500", 157000], ["500.01", 204008], ["501", 204840],
+    ["599.99", 287992], ["600", 288000], ["600.01", 288009],
+    ["799.99", 476991], ["800", 477000], ["800.01", 477011],
+    ["999.99", 686990], ["1000", 687000], ["1000.01", 687012],
+    ["1001", 688155], ["1100", 802500]
+  ]
+}

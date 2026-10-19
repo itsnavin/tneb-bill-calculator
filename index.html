@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Tamil Nadu domestic electricity energy estimates, with itemized subsidies, official-source evidence and transparent daily monitoring. Current rates require review.">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self' data:; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <meta name="theme-color" content="#14584f">
+  <title>Tamil Nadu electricity calculator | Domestic LT I-A</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <script type="module" src="./src/app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#calculator">Skip to calculator</a>
+  <header class="site-header">
+    <a class="brand" href="./"><span class="brand-icon" aria-hidden="true">TN</span><span>Home energy<span class="brand-sub">Tamil Nadu electricity calculator</span></span></a>
+    <a href="#sources">Sources &amp; verification <span aria-hidden="true">&darr;</span></a>
+  </header>
+  <main>
+    <div class="intro">
+      <p class="eyebrow">DOMESTIC HOUSEHOLDS &middot; LT I-A &middot; TWO-MONTH CYCLE</p>
+      <h1>Understand your units.<br><span>See where the money goes.</span></h1>
+      <p>A simple electricity energy-charge illustration, with the subsidy and every slab made visible. Independent of TNPDCL; not an official bill.</p>
+    </div>
+    <section class="notice" aria-labelledby="verification-heading">
+      <span class="notice-icon" aria-hidden="true">!</span>
+      <div><h2 id="verification-heading">Current-rate calculation is unavailable</h2><p id="blocker">Loading tariff verification details. No current estimate will be shown.</p></div>
+    </section>
+    <div class="workspace">
+      <section class="card calculator" id="calculator" aria-labelledby="calculator-heading">
+        <p class="eyebrow">YOUR CONSUMPTION</p>
+        <h2 id="calculator-heading">Calculate energy charges</h2>
+        <form id="bill-form" novalidate>
+          <label for="mode">Rate schedule</label>
+          <select id="mode" aria-describedby="mode-help">
+            <option value="current">Current rates &mdash; not verified</option>
+            <option value="historical">Historical illustration: 10 May&ndash;30 June 2026</option>
+          </select>
+          <p class="help" id="mode-help">Choose the historical illustration explicitly to explore the reviewed pre-July schedule. It is not a current bill estimate.</p>
+          <label for="units">Consumed electricity <span class="unit-label">kWh / units</span></label>
+          <input id="units" name="units" type="text" inputmode="decimal" placeholder="e.g. 350" autocomplete="off" aria-describedby="units-help input-error">
+          <p class="help" id="units-help">Total consumption for one normal two-month domestic cycle, not a monthly reading. Decimal values (up to 2 places) are an illustration, not a meter-rounding rule.</p>
+          <div class="examples" aria-label="Example consumption"><span>Try units</span><button type="button" data-units="100">100</button><button type="button" data-units="200">200</button><button type="button" data-units="500">500</button><button type="button" data-units="501">501</button></div>
+          <p id="input-error" role="alert" class="error"></p>
+          <button id="calculate" type="submit" class="primary" disabled>Current rates need review</button>
+        </form>
+        <p class="privacy">No account number. No login. Your units stay in this browser.</p>
+      </section>
+      <section class="card result" aria-labelledby="result-heading" aria-live="polite">
+        <div id="empty-result">
+          <span class="empty-icon" aria-hidden="true">&#9889;</span>
+          <h2 id="result-heading">Accuracy before a number.</h2>
+          <p>We will not guess a current tariff. Select the clearly dated historical schedule to see how the calculation works.</p>
+          <div class="mini-facts"><div><strong>2 months</strong><span>Consumption cycle</span></div><div><strong>Official PDFs</strong><span>Evidence, not search snippets</span></div></div>
+        </div>
+        <div id="bill-result" hidden>
+          <p class="eyebrow">HISTORICAL ENERGY ILLUSTRATION &middot; NOT CURRENT</p>
+          <h2 id="total"></h2>
+          <p id="result-summary"></p>
+          <div class="table-wrap"><table>
+            <caption>Consumer-payable energy charges after subsidy</caption>
+            <thead><tr><th scope="col">Slab (kWh)</th><th scope="col">Units</th><th scope="col">Pay / unit</th><th scope="col">Amount</th></tr></thead>
+            <tbody id="slab-rows"></tbody>
+          </table></div>
+          <dl class="totals"><div><dt>Approved energy before subsidy</dt><dd id="approved-total"></dd></div><div><dt>Government energy subsidy</dt><dd id="subsidy-total"></dd></div><div><dt>Free units in this scenario</dt><dd id="free-units"></dd></div><div><dt>Fixed charge (Order 6/2025)</dt><dd>Nil</dd></div></dl>
+          <p class="help">Energy only. Taxes or account charges are not calculated. Sub-paise products are summed before rounding once to paise; displayed rows can differ by one paise from their sum.</p>
+          <button type="button" id="download" class="secondary">Download itemization (.txt)</button>
+        </div>
+      </section>
+    </div>
+    <section class="explainer" aria-labelledby="rules-heading">
+      <div><p class="eyebrow">THE DETAIL THAT MATTERS</p><h2 id="rules-heading">Crossing 500 changes earlier units, too.</h2></div>
+      <p>In the reviewed May&ndash;June 2026 schedule, usage up to 500 kWh gets 200 free units. Above 500 kWh, only the first 100 are free; units 101&ndash;400 are payable at the higher-use rate. This is not one universal progressive table.</p>
+    </section>
+    <section class="card sources" id="sources" aria-labelledby="sources-heading">
+      <div class="section-heading"><div><p class="eyebrow">EVIDENCE &amp; FRESHNESS</p><h2 id="sources-heading">Know what has actually been checked.</h2></div><button id="refresh" class="secondary" type="button">Reload published status</button></div>
+      <p id="network-status" role="status"></p>
+      <p id="monitor-summary" class="monitor-status" role="status">Loading monitoring status&hellip;</p>
+      <dl class="metadata">
+        <div><dt>Last monitoring attempt</dt><dd id="checked-at">Not available</dd></div>
+        <div><dt>Last complete source fetch</dt><dd id="last-success">Not available</dd></div>
+        <div><dt>Historical evidence review</dt><dd id="reviewed-at">Not available</dd></div>
+        <div><dt>Last human tariff verification</dt><dd>None recorded &mdash; not human-certified</dd></div>
+        <div><dt>Historical schedule</dt><dd>10 May&ndash;30 June 2026 only</dd></div>
+        <div><dt>Daily schedule</dt><dd>02:17 UTC / 07:47 IST (may be delayed)</dd></div>
+      </dl>
+      <p class="help" id="coverage">Monitoring cannot prove that no newer order exists.</p>
+      <ul id="monitor-issues"></ul>
+      <p><a id="run-link" hidden>View this monitoring run</a> <a href="https://github.com/itsnavin/tneb-bill-calculator/actions/workflows/tariff-monitor.yml">Daily check history</a></p>
+      <h3>Primary tariff and subsidy evidence</h3>
+      <ul class="source-list" id="source-list"></ul>
+      <p class="help">Government Order (Ms) No.50, Energy Department, 10 May 2026, is expressly cited and implemented in TNERC Order 5/2026. A separate original GO copy has not been obtained. Historical evidence was cross-checked by a coding assistant; it is not human certification.</p>
+      <p><a href="./data/evidence.json">Extracted passages &amp; SHA-256 provenance</a> &middot; <a href="./data/status.json">Raw monitoring results</a> &middot; <a href="https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/">TNPDCL tariff index</a> &middot; <a href="https://www.tnerc.tn.gov.in/TariffOrders.aspx">TNERC tariff orders</a></p>
+    </section>
+    <section class="limitations" aria-labelledby="limits-heading">
+      <h2 id="limits-heading">An energy illustration, not your payable account bill.</h2>
+      <p>For standard domestic household LT I-A connections only. Excludes arrears, delayed-payment charges, deposits, meter adjustments, taxes, solar/net metering, common-area supply, commercial connections, subsidy opt-out or ineligible services, and mixed-rate or prorated billing periods. We do not infer these from units. Check your assessment and subsidy eligibility with TNPDCL.</p>
+      <p>For your actual bill, use <a href="https://www.tnpdcl.org/en/tnpdcl/">official TNPDCL services</a>. This application does not collect connection IDs, passwords, or payments.</p>
+    </section>
+    <noscript><p class="notice">JavaScript is required for itemization and published monitoring status. Current rates are unverified. Use the official source links above.</p></noscript>
+  </main>
+  <footer><span>Built for clarity. Not affiliated with TNPDCL or TNERC.</span><a href="https://github.com/itsnavin/tneb-bill-calculator">Open source &amp; methodology</a></footer>
+</body>
+</html>

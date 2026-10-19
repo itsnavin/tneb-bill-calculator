@@ -1,0 +1,37 @@
+{
+  "id": "lt-ia-2026-may-historical",
+  "category": "LT I-A domestic household",
+  "billingCycle": "two-month",
+  "effectiveFrom": "2026-05-10",
+  "illustrationThrough": "2026-06-30",
+  "currentApproved": false,
+  "lastHumanVerifiedAt": null,
+  "reviewMethod": "Primary-document extraction and cross-check by a coding assistant; not human certification.",
+  "currentBlocker": "Current rates are not verified. TNERC Order 6/2025, page 34, requires an inflation-based revision from 1 July 2026. The official indexes checked do not establish that revision and the corresponding consumer subsidy. Pre-July rates must not be assumed current.",
+  "rules": [
+    {
+      "maxTotalUnits": 500,
+      "bands": [
+        { "upTo": 100, "approvedPaise": 495, "subsidyPaise": 495 },
+        { "upTo": 200, "approvedPaise": 495, "subsidyPaise": 495 },
+        { "upTo": 400, "approvedPaise": 495, "subsidyPaise": 25 },
+        { "upTo": 500, "approvedPaise": 665, "subsidyPaise": 35 }
+      ]
+    },
+    {
+      "maxTotalUnits": null,
+      "bands": [
+        { "upTo": 100, "approvedPaise": 495, "subsidyPaise": 495 },
+        { "upTo": 400, "approvedPaise": 495, "subsidyPaise": 25 },
+        { "upTo": 500, "approvedPaise": 665, "subsidyPaise": 35 },
+        { "upTo": 600, "approvedPaise": 880, "subsidyPaise": 40 },
+        { "upTo": 800, "approvedPaise": 995, "subsidyPaise": 50 },
+        { "upTo": 1000, "approvedPaise": 1105, "subsidyPaise": 55 },
+        { "upTo": null, "approvedPaise": 1215, "subsidyPaise": 60 }
+      ]
+    }
+  ],
+  "fixedChargePaise": 0,
+  "taxIncluded": false,
+  "rounding": "Energy illustration only: sum exact hundredth-kWh products, then round half-up once to the nearest paise. This is not an assertion about TNPDCL meter or final bill rounding."
+}

@@ -1,0 +1,79 @@
+{
+  "reviewedAt": "2026-10-19T20:47:37.442Z",
+  "lastHumanVerifiedAt": null,
+  "method": "Coding-assistant primary-document extraction and cross-check. No human review is claimed.",
+  "governmentOrderCoverage": "G.O.(Ms) No.50, Energy Department, 10 May 2026, is expressly implemented and quoted by TNERC Order 5/2026; a separate original GO copy has not been obtained.",
+  "documents": [
+    {
+      "id": "tariff-2025",
+      "title": "TNERC Order 6 of 2025 (30 June 2025)",
+      "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
+      "pages": [
+        34
+      ],
+      "effectiveFrom": "2025-07-01",
+      "sha256": "efc5a4600d4319bc81565a0001540fd2f5f5301461f9e61d5ec0f345acdf31c4",
+      "fetchedAt": "2026-10-19T20:47:37.442Z",
+      "passages": [
+        {
+          "page": 34,
+          "text": "Tamil Nadu Power Distribution Corporation Ltd.(TNPDCL) Tariff Order, 2025 \nPage 34 \nTNERC   –   T.O.No. 6 of 2025, Dt.30-06-2025 \nof previous financial year)/ CPI of April of previous financial year) or 6%\nwhichever is lower) with effect from 1st July of respective financial year. \nm.   Electricity Duty/Tax on Electricity shall be levied in addition to the tariffs\napproved by the Commission, and in accordance with the Government of\nTamil Nadu stipulations from time to time. The rate and the reference number\nof the Government Resolution/ Order under which the Electricity Duty/Tax\non Electricity are applied shall be stated in the consumer s‟ energy bills. A \ncopy of such Resolution / Order shall be hosted in   the Distribution Licensee‟s \nwebsite. \n3.2.2   Low Tension Tariff I-A : (Domestic, Multi-tenements, Old age homes,\nHandlooms) \nFor FY 2025-26 \nTariff \nRange in kWh (units) and \nbilling period (one or   two \nmonths) \nFY 202 5 - 2 6 \n(Commission Determined Tariff) \nFixed Charges \n(Rupees per \nkW per month) \nEnergy charges \nin paise/kWh \nLow Tension \nTariff I - A * \nFrom 0 to 200 units per month or \n0 - 400 units for two months \nNil \n4 95 \nFrom 201 units to 250 units per \nmonth or 401 units to 500 units \nfor two months \n6 65 \nFrom 251 units to 300 units per \nmonth or 501 units to 600 units \nfor two months \n8 80 \nFrom 301 units to 400 units per \nmonth or 601 units to 800 units \nfor two months \n9 95 \nFrom 401 units to 500 units   per \nmonth or 801 units to 1000 units \nfor two months \n1 105 \nFrom 501 units and above per \nmonth or 1001 units and above for \ntwo months \n1 215 \n*To be partly subsidised by the Government \nFor FY 2026-27 \nThe applicable tariff (both fixed and energy charge) for FY 2025-26 shall undergo an\ninflation based adjustment, as per para 6.2.1.m. of T.O.No.7 of 2022 dt.09.09.2022. The\nrevision will be effective from 01 st   July of 2026 of the control period. "
+        }
+      ]
+    },
+    {
+      "id": "subsidy-4-2026",
+      "title": "TNERC Order 4 of 2026 (27 April 2026)",
+      "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf",
+      "pages": [
+        5,
+        6
+      ],
+      "effectiveFrom": "2026-04-01",
+      "sha256": "1eb20727bfa8bba5133c5d1a7579af80e42eac92c7400be52810f952f44fae00",
+      "fetchedAt": "2026-10-19T20:47:37.442Z",
+      "passages": [
+        {
+          "page": 5,
+          "text": "5 \nb)   No tariff hike to the Cottage and Micro Industries consumers (LT \n3A(1). \nc)   No tariff hike to the Powerloom consumers (LT IIIA(2) \nd)   No tariff hike to the Industries consumers upto 50kW (LT IIIB) \ne)   No   hike   in   energy   cha rges   upto   500   units   bimonthly   for \nMiscellaneous/General purpose consumers(LT V). \n(4)   The   Commission   has   considered   the   following   facts   while\ndetermining the Subsidy payable by GoTN: \n(i)   The subsidy rates as issued in the Government’s Letter (Ms.) No. \n4488/D3/2024-1, dated 05-07-2024 of Energy (C2) Department,\nGoTN. \n(ii)   The GoTN, vide letter Nos.5434/D3/2024, dated 04-12-2024 and\nLr.No.4097/D3/2025, dated 30-09-2025 declared tariff subsidy for\neach   of   consumer   categories   separately   on   per   unit   basis   in\nconsonance   with   standard   operating   procedure   prescribed   by\nMinistry of Power.   The details of per unit subsidy are as follows: \nCategory   Slab   Subsidy/Unit \nDomestic (IA)   Upto 500 units \n0   –   100 units (bimonthly) \nRs.4.95/unit. \n101   –   200 units (bimonthly)   Rs.2.60/unit. \n201-300 units   Rs.0.25/unit \n301-400 units   Rs. 0.25/unit \n401-500 units   Rs. 0.35/unit \nAbove 500 units \n0-100 units (bimonthly) \nRs.4.95/unit. \n101-200   Rs.0.25/unit "
+        },
+        {
+          "page": 6,
+          "text": "6 \n201 - 300   Rs.0.25 /unit \n301 - 400   Rs.0.25 /unit \n401 - 500   Rs. 0.35 /unit \n501 - 600   Rs. 0.40 /unit \n601 - 800   Rs. 0.50 /unit \n801 - 1000   Rs. 0.55 /unit \nAbove 1000   Rs. 0.60 /unit \nCommon \nSupply (IE) \nReduction   in   tariff   rate   to \ncertain   categories   of   Multi - \ntenements consumers \nRs.2.8 5 /unit \nHut (IB)   No meter - Fixed charges   Rs.3 3 2 /month/se \nrvice \nIf meters fixed   Rs. 10 . 10 /unit \nPlaces   of \nWorship (IIC) \n0 - 120 units   Rs. 3. 2 5 /unit \nPowerloom \n(IIIA2) \nUpto 500 units   Rs. 7.1 5 /unit. \n501 - 750   Rs. 8.25 /unit. \n751 - 1000   Rs. 8.25 /unit. \n1001 - 1500   Rs.3. 80 /unit. \nAbove 1500   Rs.2.60 /unit. \nAgriculture (IV)   No meter   Rs. 3 925 /HP/year. \nRs.4. 95 /unit \nHT   Lift \nIrrigation \nAll units   Rs.7. 7 5/unit \nLT   Industries \n(IIIB)   ToD \nCharges   during \nPeak Hours \nWith smart meter   Rs.0.8 25 /unit. \nWithout smart meter   Rs.2.05 /unit \nLT   Industries \n(IIIB) (Network \nCharges) \nReduction in Solar Roof Top \nNetwork Charges to 50% for \nLT Industries (IIIB) \nRs.0.80 /unit \n(5)   In   the   aforesaid   commitment   letter,   the   Government   of   Tamil\nNadu, has specified the subsidy (unit / SC/HP, as the case may be) to be\npayable   to   the   subsidized   categories.   The   fixation   of   tariff   is   within   the\npurview   of   the   Commission.   As   far   as   the   subsidy   is   concerned,   the\nGovernment has to decide the grant of subsidy to any consumer.   The "
+        }
+      ]
+    },
+    {
+      "id": "subsidy-5-2026",
+      "title": "TNERC Order 5 of 2026 (26 May 2026)",
+      "url": "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "effectiveFrom": "2026-05-10",
+      "sha256": "a75c54c0ce775c9c2bbd49e1f55092f342b3bdd15c79217f80c91856b75160e4",
+      "fetchedAt": "2026-10-19T20:47:37.442Z",
+      "passages": [
+        {
+          "page": 1,
+          "text": "1 \nBEFORE THE TAMIL NADU ELECTRICITY REGULATORY COMMISSION \nCHENNAI \nOrder No. 5 of 2026, dated 26-05-2026 \n____________________________________________________________ \nPresent :   Thiru R. Manivannan   .... Chairman \nThiru K. Venkatesan   .... Member \nIn the matter of : Additional Tariff Subsidy Order for FY 2026-27 due\nto   increase   of   free   electricity   of   total   200   units   bimonthly   to\ndomestic   consumers   who   consumes   electricity   upto   500   units\nbimonthly by the Government of Tamil Nadu. \n______________________________________________________ \nThe Government of Tamil Nadu (GoTN), vide G.O.(Ms) No.50 dated\n10-05-2026,   has issued policy directions   under sub - section (1) of section \n108 of the Electricity Act, 2003, for   provision   of free electricity of total 200 "
+        },
+        {
+          "page": 2,
+          "text": "2 \nunits bimonthly   to   domestic   consumers   with   consumption upto   500   units\nbimonthly with effect from 10-05-2026 and those who consume electricity\nmore than 500 units bimonthly, the existing tariff structure would continue\nincluding free electricity of 100 units bimonthly. \n2)   The   Government   of   Tamil   Nadu   (GoTN),   vide   letter\nNo.2800/D3/2026 dated 10-05-2026 has also issued commitment letter to\nprovide subsidy u/s 65 of the Electricity Act, 2003 in order to compensate\nthe   revenue   shortfall   to   Tamil   Nadu   Power   Distribution   Corporation\nLtd.,(TNPDCL). \n3)   TNPDCL,   in   their   letter   dated   18-05-2026   have   stated   that   the\nGovernment   of   Tamil   Nadu   for   compliance   with   the   aforesaid   policy\ndirectives has allotted to provide Rs.1730 Crores/annum as additional tariff\nsubsidy to TNPDCL.   As the policy directive is being effected from 10-05-\n2026,   the   provisional   tariff   subsidy   has   been   worked   out   as   Rs.1545.14\nCrores   for   the   period   from   10-05-2026   to   31-03-2027.   The   details   of\nprovisional tariff subsidy for the period from 10-05-2026 to 31-03-2027 i.e\n326 days have been worked out as follows: "
+        },
+        {
+          "page": 3,
+          "text": "3 \nThe   implementation   of   the   provision   of   free   electricity   of   total   200\nunits bimonthly for Domestic consumers with bimonthly consumption upto\n500 units for   the   period from 10-05-2026 to 31-03-2027 will result in a\nrevenue loss of 1545.14 crores (Rupees One Thousand Five Hundred Forty\nFive   Crores   and   Fourteen   Lakhs   )   for   326   days.   Therefore,   Tamil   Nadu \nSlab \nConsump \ntion (in \nMU)/ No. \nof \nservices \n(in \nlakhs) \nApproved \nTariff \nSubsidy \nAvailed in \nthe \nprovisional \ntariff \nsubsidy \norder No.4 \nof 2026 \ndated 27 - 04 - \n2026 \nSubsidy \ndue to \npresent \npolicy \ndirectives \nG.O.(Ms) \nNo.50 \ndated 10 - \n05 - 2026 \nProvisional \ntariff \nsubsidy for \n365 days \n(Rs. in \nCrs.) \nProvisional \ntariff \nsubsidy for \n326 days \nw.e.f. 10 - \n05 - 2026 to \n31 - 03 - \n2027   (Rs. \nin Crs.) \nI. Bi - Monthly   Consumption upto   100 units \n0-100\nunits   1922.58   4.95   4.95   Nil   Already\navailed \nAlready\navailed \nII. Bi - Monthly   Consumption above 100 units and   upto   200 units \n0-100\nunits   3517   4.95   4.95   Nil   Already\navailed \nAlready\navailed \n101-200\nunits   2091.08   4.95   2.60   2.35   491.40   438.89 \nIII.Bi - Monthly Consumption above 200 units and upto 500 units \n0-100\nunits   5270.60   4.95   4.95   Nil   Already\navailed \nAlready\navailed \n101-200\nunits   5270.60   4.95   2.60   2.35   1238.59   1106.25 \nTotal subsidy due to increase of free electricity of 200 units \nbimonthly w.e.f.10 - 05 - 2026 for 326 days \n1545.14 "
+        },
+        {
+          "page": 4,
+          "text": "4 \nPower   Distribution   Corporation   Ltd.,   has   requested   to   approve   the\nprovisional tariff subsidy payable by the Government of Tamil Nadu for the\nFY 2026-27. \nThe   Commission   after   considering   all   the   above,   approves   the\nprovisional subsidy of Rs.1545.14 Crores for provision of free electricity of\ntotal   200   units   bimonthly   for   Domestic   consumers   with   bimonthly\nconsumption upto 500 units for the period from 10-05-2026 to 31-03-2027. \nThe Government of Tamil Nadu may release the aforesaid subsidy as\nper the time stipulated below: \nProvisional Subsidy Payable by Government for FY 2026-27 \nSl. No.   Category   Subsidy\nperiod \nSubsidy\n(Rs. in\nCrores) \nPayable on\nor before \n1   Domestic   1 0 - 0 5 - 20 26   to \n30 - 0 6 - 20 26 \n(1 st   Quarter) \n246.47   Immediate ly \n2   Domestic   01 - 0 7 - 20 26   to \n30 - 0 9 - 20 26 \n(2 nd   Quarter \n436.05   30 - 06 - 2026 \n3   Domestic   01 - 10 - 20 26   to \n3 1 - 12 - 20 26 \n(3 rd   Quarter) \n436.05   30 - 09 - 202 6 \n4   Domestic   01 - 01 - 20 27   to \n3 1 - 03 - 20 27 \n(4 th   Quarter) \n426.57   31 - 12 - 202 6 \nTotal   1545.14 "
+        }
+      ]
+    }
+  ]
+}

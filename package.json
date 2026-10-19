@@ -1,0 +1,19 @@
+{
+  "name": "tneb-bill-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "monitor": "node scripts/monitor.mjs",
+    "dev": "node scripts/serve.mjs",
+    "test:browser": "node tests/browser.mjs"
+  },
+  "engines": { "node": ">=24" },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "cheerio": "1.1.2",
+    "pdfjs-dist": "5.4.296"
+  }
+}
