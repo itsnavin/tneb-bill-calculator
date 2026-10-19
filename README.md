@@ -75,6 +75,14 @@ meter adjustments, common-area supply, solar/net metering, opt-out/ineligible
 subsidy connections, multi-cycle or prorated assessments, and mixed-rate periods.
 Only TNPDCL can establish your actual account's payable bill and eligibility.
 
+The app prominently separates **dated government free-unit evidence** from
+unverified current applicability. Its benefit card cites Order 5/2026's effective
+date and provisional period (10 May 2026–31 March 2027), without asserting that no
+later directions exist. Historical results and downloads show total consumed,
+government-free, and chargeable units, plus the whole-consumption eligibility
+condition. Free units are capped at actual consumption: 100 kWh consumed means
+100 kWh free and zero chargeable, not a 200-unit credit.
+
 ## Daily official-source monitoring
 
 [`tariff-monitor.yml`](.github/workflows/tariff-monitor.yml) runs once daily at
@@ -118,9 +126,24 @@ Each scheduled/manual run:
 `unchanged` means only that the monitored evidence matches the baseline.
 `needs-review` persists until an explicit baseline review; `error` publishes the
 actual fetch/format failure. Current rates remain unverified in all three cases.
-Browser **Reload published status** fetches this published result, not the official
+Browser **Check now: published status** fetches this published result, not the official
 sites; browser offline state is displayed separately. No service worker conceals
 failed updates with a silent cached-success fallback.
+
+The **Check now: published status** button reloads the published result with a
+cache-busting query and a bounded 15-second request. It displays browser load time
+separately and never advances the official-check timestamp. A maintainer-only
+manual-check link opens the workflow; the unauthenticated static app cannot
+dispatch a workflow or promise CORS access to official sites. Manual runs also log
+bounded DNS and ordinary HTTPS/curl diagnostics for the two official indexes,
+without weakening TLS, following unvalidated redirects, changing hosts, or
+converting a diagnostic response into tariff approval.
+
+Follow-up investigation rechecked the official 2026 TNERC index, TNPDCL tariff
+index, and TNPDCL press-release page. The tariff page still links the 2025 order;
+the 2026 index still does not establish a July 2026 distribution-rate revision.
+The press-release page supplied no July tariff document. This is a coverage
+limitation, not proof that no revision or later government direction exists.
 
 **Coverage limitation:** this is not an exhaustive crawler of every government
 gazette, archive year, court ruling, press release, or customer condition. TNERC's

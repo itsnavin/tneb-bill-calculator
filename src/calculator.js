@@ -45,6 +45,8 @@ export function calculateHistorical(value, tariff, { historicalConsent = false }
   let previous = 0;
   let approvedExact = 0n;
   let subsidyExact = 0n;
+  let freeHundredths = 0;
+  let chargeableHundredths = 0;
   for (const band of rule.bands) {
     const upper = band.upTo === null ? hundredths : band.upTo * 100;
     const count = Math.max(0, Math.min(hundredths, upper) - previous);
@@ -53,6 +55,8 @@ export function calculateHistorical(value, tariff, { historicalConsent = false }
       const subsidy = BigInt(count) * BigInt(band.subsidyPaise);
       approvedExact += approved;
       subsidyExact += subsidy;
+      if (band.approvedPaise === band.subsidyPaise) freeHundredths += count;
+      else chargeableHundredths += count;
       rows.push({
         from: previous / 100, to: Math.min(hundredths, upper) / 100,
         units: count / 100, approvedRatePaise: band.approvedPaise,
@@ -69,7 +73,8 @@ export function calculateHistorical(value, tariff, { historicalConsent = false }
     units: hundredths / 100, rows,
     totalPaise: round(approvedExact - subsidyExact),
     approvedPaise: round(approvedExact), subsidyPaise: round(subsidyExact),
-    freeUnits: Math.min(hundredths / 100, hundredths <= 50_000 ? 200 : 100),
+    freeUnits: freeHundredths / 100,
+    chargeableUnits: chargeableHundredths / 100,
     historical: true
   };
 }

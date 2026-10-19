@@ -26,6 +26,17 @@
       <span class="notice-icon" aria-hidden="true">!</span>
       <div><h2 id="verification-heading">Current-rate calculation is unavailable</h2><p id="blocker">Loading tariff verification details. No current estimate will be shown.</p></div>
     </section>
+    <section class="card subsidy-guide" aria-labelledby="subsidy-heading">
+      <p class="eyebrow">GOVERNMENT FREE UNITS &middot; DATED OFFICIAL EVIDENCE</p>
+      <h2 id="subsidy-heading">The free-unit benefit depends on total consumption.</h2>
+      <p><a href="https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf">TNERC Order 5/2026, pages 1&ndash;4</a> implements Government Order (Ms) No.50: effective <strong>10 May 2026</strong>, with provisional subsidy approved for the period through <strong>31 March 2027</strong>.</p>
+      <div class="benefit-rules">
+        <div><strong>Up to 500 kWh total</strong><span>First <b>200 kWh free</b> per two-month cycle. If you use fewer than 200 units, only the units actually consumed are free.</span></div>
+        <div><strong>Above 500 kWh total</strong><span>Only the first <b>100 kWh free</b>. The 101&ndash;200 units become chargeable too; the 200-unit benefit does not carry over.</span></div>
+      </div>
+      <p class="help">For eligible domestic LT I-A services in the order; no cash credit or unused-unit carry-forward is assumed. Opt-out/ineligible services and mixed or prorated cycles are not supported.</p>
+      <p class="subsidy-caution"><strong>Verified order content is not current eligibility verification.</strong> We have not established a complete current tariff/subsidy schedule or whether later directions modify these provisions. The calculator applies them only in its explicitly selected 10 May&ndash;30 June 2026 historical scenario, never as a guaranteed current entitlement.</p>
+    </section>
     <div class="workspace">
       <section class="card calculator" id="calculator" aria-labelledby="calculator-heading">
         <p class="eyebrow">YOUR CONSUMPTION</p>
@@ -62,7 +73,8 @@
             <thead><tr><th scope="col">Slab (kWh)</th><th scope="col">Units</th><th scope="col">Pay / unit</th><th scope="col">Amount</th></tr></thead>
             <tbody id="slab-rows"></tbody>
           </table></div>
-          <dl class="totals"><div><dt>Approved energy before subsidy</dt><dd id="approved-total"></dd></div><div><dt>Government energy subsidy</dt><dd id="subsidy-total"></dd></div><div><dt>Free units in this scenario</dt><dd id="free-units"></dd></div><div><dt>Fixed charge (Order 6/2025)</dt><dd>Nil</dd></div></dl>
+          <dl class="totals"><div><dt>Total consumed units</dt><dd id="consumed-units"></dd></div><div><dt>Government free units applied</dt><dd id="free-units"></dd></div><div><dt>Chargeable units after free units</dt><dd id="chargeable-units"></dd></div><div><dt>Approved energy before subsidy</dt><dd id="approved-total"></dd></div><div><dt>Government energy subsidy</dt><dd id="subsidy-total"></dd></div><div><dt>Fixed charge (Order 6/2025)</dt><dd>Nil</dd></div></dl>
+          <p class="benefit-applied" id="benefit-condition"></p>
           <p class="help">Energy only. Taxes or account charges are not calculated. Sub-paise products are summed before rounding once to paise; displayed rows can differ by one paise from their sum.</p>
           <button type="button" id="download" class="secondary">Download itemization (.txt)</button>
         </div>
@@ -73,7 +85,9 @@
       <p>In the reviewed May&ndash;June 2026 schedule, usage up to 500 kWh gets 200 free units. Above 500 kWh, only the first 100 are free; units 101&ndash;400 are payable at the higher-use rate. This is not one universal progressive table.</p>
     </section>
     <section class="card sources" id="sources" aria-labelledby="sources-heading">
-      <div class="section-heading"><div><p class="eyebrow">EVIDENCE &amp; FRESHNESS</p><h2 id="sources-heading">Know what has actually been checked.</h2></div><button id="refresh" class="secondary" type="button">Reload published status</button></div>
+      <div class="section-heading"><div><p class="eyebrow">EVIDENCE &amp; FRESHNESS</p><h2 id="sources-heading">Know what has actually been checked.</h2></div><button id="refresh" class="secondary" type="button" aria-describedby="refresh-help">Check now: published status</button></div>
+      <p class="help" id="refresh-help">This button reloads the last published monitoring result, not today's official rates. Official-site checks run daily at 07:47 IST (may be delayed). Repository maintainers can <a href="https://github.com/itsnavin/tneb-bill-calculator/actions/workflows/tariff-monitor.yml">run an official-source check manually in GitHub Actions</a>; this public page cannot start one.</p>
+      <p class="help" id="status-loaded-at" role="status">Published status has not been loaded in this browser.</p>
       <p id="network-status" role="status"></p>
       <p id="monitor-summary" class="monitor-status" role="status">Loading monitoring status&hellip;</p>
       <dl class="metadata">

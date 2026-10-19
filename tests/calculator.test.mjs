@@ -25,6 +25,20 @@ test('integer-hundredth arithmetic handles decimals without floating drift', () 
   assert.equal(parseUnits(' 000200.01 '), 20001);
   assert.equal(calculate('100000').totalPaise, 115032000);
 });
+test('free and chargeable units reflect government benefit conditions and actual consumption', () => {
+  for (const [units, free, chargeable] of [
+    ['0', 0, 0], ['99.99', 99.99, 0], ['100', 100, 0],
+    ['199.99', 199.99, 0], ['200', 200, 0], ['200.01', 200, 0.01],
+    ['499.99', 200, 299.99], ['500', 200, 300],
+    ['500.01', 100, 400.01], ['501', 100, 401], ['1000', 100, 900]
+  ]) {
+    const bill = calculate(units);
+    assert.equal(bill.freeUnits, free);
+    assert.equal(bill.chargeableUnits, chargeable);
+    assert.equal(Math.round((bill.freeUnits + bill.chargeableUnits) * 100), parseUnits(units));
+  }
+  assert.equal(calculate('500').subsidyPaise - calculate('501').subsidyPaise, 46960);
+});
 test('invalid, nonfinite, negative, excessive and overprecision inputs are visible errors', () => {
   for (const input of ['', ' ', '-1', '+1', 'NaN', NaN, Infinity, '-Infinity', '1e3', '0x10', '.5', '1.', '1,000', '200.001', '100000.01', '999999', null, undefined, '<script>']) {
     assert.throws(() => calculate(input), /Enter/);

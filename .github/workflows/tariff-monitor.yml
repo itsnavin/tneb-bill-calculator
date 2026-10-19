@@ -33,6 +33,10 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --no-audit --no-fund
+      - name: Diagnose official-source DNS and normal HTTPS connectivity
+        if: github.event_name == 'workflow_dispatch'
+        continue-on-error: true
+        run: node scripts/diagnose-sources.mjs
       - name: Check official indexes and linked documents
         id: monitor
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'

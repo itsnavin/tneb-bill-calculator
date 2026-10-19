@@ -136,3 +136,12 @@ test('recorded provenance is pinned to observed official documents', async () =>
   const subsidy = evidence.documents.find(d => d.id === 'subsidy-5-2026');
   assert.match(subsidy.passages.find(p => p.page === 2).text.replace(/\s+/g, ' '), /more than 500 units bimonthly, the existing tariff structure would continue including free electricity of 100 units/);
 });
+test('daily routine retains manual dispatch, persistent failure results and deployment before CI failure', async () => {
+  const workflow = await readFile('.github/workflows/tariff-monitor.yml', 'utf8');
+  assert.match(workflow, /cron: '17 2 \* \* \*'/);
+  assert.match(workflow, /workflow_dispatch:/);
+  assert.match(workflow, /git add data\/status.json/);
+  assert.match(workflow, /git push origin HEAD:main/);
+  assert.ok(workflow.indexOf('Publish updated app and source status') < workflow.indexOf('Report changed or failed sources after publishing warnings'));
+  assert.match(workflow, /steps.monitor.outcome == 'failure'/);
+});

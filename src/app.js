@@ -6,12 +6,13 @@ let tariff;
 let evidence;
 let status;
 let latestBill;
+let statusLoadError;
 const date = value => value ? new Date(value).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short', timeZoneName: undefined }) : 'None recorded';
 const text = (id, value) => { byId(id).textContent = value; };
 const formatDate = value => value ? `${date(value)} (your local time)` : 'None recorded';
 
 async function readJson(path) {
-  const response = await fetch(path, { cache: 'no-store' });
+  const response = await fetch(path, { cache: 'no-store', signal: AbortSignal.timeout(15_000) });
   if (!response.ok) throw new Error(`Unable to load ${path}: HTTP ${response.status}`);
   return response.json();
 }
@@ -32,7 +33,8 @@ function updateMode() {
 
 function showStatus() {
   const health = sourceHealth(status);
-  text('monitor-summary', health.text);
+  text('monitor-summary', statusLoadError
+    ? `${statusLoadError}. Monitoring unavailable; current rates remain blocked.` : health.text);
   byId('monitor-summary').dataset.kind = health.kind;
   text('network-status', navigator.onLine ? '' : 'You are offline. Published monitoring data cannot be refreshed; this is not a live official-source check.');
   text('checked-at', formatDate(status?.checkedAt));
@@ -52,13 +54,17 @@ function showStatus() {
 
 async function refreshStatus() {
   byId('refresh').disabled = true;
+  text('status-loaded-at', 'Loading the published result; this does not start an official-site check.');
   try {
-    status = await readJson('./data/status.json');
+    status = await readJson(`./data/status.json?refresh=${Date.now()}`);
+    statusLoadError = null;
+    text('status-loaded-at', `Published result loaded in this browser: ${formatDate(new Date().toISOString())}. The official-check time is shown separately below.`);
     showStatus();
   } catch (error) {
     status = null;
+    statusLoadError = error.message;
     showStatus();
-    text('monitor-summary', `${error.message}. Monitoring unavailable; current rates remain blocked.`);
+    text('status-loaded-at', 'Published result could not be refreshed. No successful official check is implied.');
   } finally {
     byId('refresh').disabled = false;
   }
@@ -76,7 +82,12 @@ byId('bill-form').addEventListener('submit', event => {
     text('result-summary', `${bill.units} kWh / two months. Rates effective 10 May 2026; illustration limited to 30 June 2026. Not valid as a current estimate.`);
     text('approved-total', money(bill.approvedPaise));
     text('subsidy-total', money(bill.subsidyPaise));
+    text('consumed-units', `${bill.units} kWh`);
     text('free-units', `${bill.freeUnits} kWh`);
+    text('chargeable-units', `${bill.chargeableUnits} kWh`);
+    text('benefit-condition', bill.units <= 500
+      ? 'Historical rule applied: total consumption is at most 500 kWh, so up to the first 200 consumed units are free. Remaining units still receive the applicable per-unit subsidy.'
+      : 'Historical rule applied: total consumption exceeds 500 kWh, so only the first 100 consumed units are free. Units 101-200 are chargeable too; remaining units still receive the applicable per-unit subsidy.');
     const body = byId('slab-rows');
     body.replaceChildren();
     for (const row of bill.rows) {
@@ -119,6 +130,8 @@ byId('download').addEventListener('click', () => {
     'TAMIL NADU LT I-A HISTORICAL ENERGY ILLUSTRATION - NOT CURRENT OR AN OFFICIAL BILL',
     'Schedule: 10 May to 30 June 2026. Standard two-month domestic household only.',
     `Consumption: ${bill.units} kWh`,
+    `Government free units applied: ${bill.freeUnits} kWh; chargeable units: ${bill.chargeableUnits} kWh.`,
+    `Historical eligibility: ${bill.units <= 500 ? 'at most 500 kWh total: up to 200 consumed units free' : 'above 500 kWh total: only 100 units free; units 101-200 become chargeable'}.`,
     ...bill.rows.map(row => `>${row.from} to ${row.to} kWh: ${row.units} x ${money(row.ratePaise)} = ${money(row.amountPaise)} (approved ${money(row.approvedRatePaise)}/unit less subsidy ${money(row.subsidyRatePaise)}/unit)`),
     `Approved energy: ${money(bill.approvedPaise)}`,
     `Energy subsidy: ${money(bill.subsidyPaise)}`,
