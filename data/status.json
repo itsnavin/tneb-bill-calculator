@@ -1,22 +1,53 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-21T02:49:59.479Z",
+  "checkedAt": "2026-10-22T02:49:34.010Z",
   "result": "error",
-  "runUrl": "https://github.com/itsnavin/tneb-bill-calculator/actions/runs/39534925144",
+  "runUrl": "https://github.com/itsnavin/tneb-bill-calculator/actions/runs/39713314134",
   "lastSuccessfulFetchAt": "2026-10-19T20:47:49.082Z",
   "lastUnchangedAt": "2026-10-19T20:47:49.082Z",
   "currentRatesVerified": false,
   "errors": [
-    "tnpdcl-tariff: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnpdcl.org:443, timeout: 10000ms))",
     "tnerc-tariff: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))",
-    "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnpdcl.org:443, timeout: 10000ms))",
     "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20280420261156.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))",
     "https://www.tnerc.tn.gov.in/Orders/files/TO-Order%20No%20270520261449.pdf: fetch failed (UND_ERR_CONNECT_TIMEOUT: Connect Timeout Error (attempted address: www.tnerc.tn.gov.in:443, timeout: 10000ms))"
   ],
   "changes": [],
   "observations": {
-    "indexes": [],
-    "documents": []
+    "indexes": [
+      {
+        "id": "tnpdcl-tariff",
+        "url": "https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/",
+        "resolvedUrl": "https://www.tnpdcl.org/en/tnpdcl/billing-services/schedules-tariff/",
+        "sha256": "386defaea02c16e8e6949c10d8f2c0cd0561f9ad025747759524f75d884e3fcc",
+        "selectedYear": null,
+        "entries": [
+          {
+            "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
+            "title": "Tariff order",
+            "context": "Tariff order"
+          },
+          {
+            "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
+            "title": "Non Tariff related Miscellaneous Charges(LT&HT)",
+            "context": "Non Tariff related Miscellaneous Charges(LT&HT)"
+          }
+        ]
+      }
+    ],
+    "documents": [
+      {
+        "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
+        "resolvedUrl": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO062025/TO62025.pdf",
+        "sha256": "efc5a4600d4319bc81565a0001540fd2f5f5301461f9e61d5ec0f345acdf31c4",
+        "bytes": 1082004
+      },
+      {
+        "url": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
+        "resolvedUrl": "https://www.tnpdcl.org/static/tnpdcl/assets/files/tariff/2025/TO072025/TO072025.pdf",
+        "sha256": "e4ec2d45f824e1412bf353e943997bc5193a337ccc815af4778880ebaf73c13d",
+        "bytes": 813173
+      }
+    ]
   },
   "coverage": "TNPDCL tariff index; TNERC default-year tariff index; all PDFs linked in those sections; three pinned tariff/subsidy PDFs. Not every government order, archive, court ruling, or account-specific rule.",
   "note": "Source availability and unchanged hashes are not proof that no newer order exists. No rates or review timestamps are auto-approved."
